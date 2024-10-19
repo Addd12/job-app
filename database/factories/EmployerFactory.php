@@ -19,7 +19,8 @@ class EmployerFactory extends Factory
     {
         return [
             'name' => fake()->name,
-            'logo'=> fake()->imageUrl(),
+            //image($dir = null, $width = 640, $height = 480, $category = null, $fullPath = true, $randomize = true, $word = null, $gray = false, string $format = 'png')
+            'logo'=> fake()->image('public/storage', 640, 480, null, false), //full path is false so that only the image name is saved on the db and not the specified path
             'user_id' => User::factory(),
         ];
     }
